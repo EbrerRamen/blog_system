@@ -14,22 +14,39 @@ if (!isset($_SESSION['admin'])) {
 <html>
     <head>
         <title>Admin Dashboard</title>
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
-    <body>
+    <body class="dashboard">
+
+    <!-- Sidebar -->
+     <div class="sidebar">
         <h2>Welcome, <?php echo $_SESSION['admin']; ?>!</h2>
         <a href="create.php">+ Create New Post</a>
         <a href="logout.php">Logout</a>
-        <hr>
-
-        <h3>All Posts</h3>
+</div>
+<div class="main-content">
+        <h2>All Posts</h2>
         <?php
         $result = $conn->query("SELECT * FROM posts ORDER BY created_at DESC");
+        if ($result->num_rows >0){
+            echo "<table>";
+            echo "<tr><th>ID</th><th>Title</th><th>Created At</th><th>Actions</th></tr>";
         while($row = $result->fetch_assoc()) {
-            echo "<h4>" . $row['title'] . "</h4>";
+            echo "<tr>";
+            echo "<td>".$row['id']."</td>";
+            echo "<td>".$row['title']."</td>";
+            echo "<td>".$row['created_at']."</td>";
+            echo "<td>";
             echo "<a href='edit.php?id=" . $row['id'] . "'>Edit</a> | ";
             echo "<a href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Are you sure?\")'>Delete</a>";
-            echo "<hr>";
+            echo "</td>";
+            echo "</tr>";
         }
+        echo "</table>";
+    } else {
+        echo "<p>No posts yet. </p>";
+    }
         ?>
+        </div>
     </body>
 </html>
