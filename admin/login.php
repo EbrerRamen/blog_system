@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <title>Admin Login</title>
         <link rel="stylesheet" href="../assets/css/style.css">
     </head>
-<body>
+<body class="login-page">
     <div class="login-container">
     <h2>Admin Login</h2>
     <?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
