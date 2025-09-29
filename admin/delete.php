@@ -1,5 +1,5 @@
 <?php 
-include("../includes/dp.php")
+include("../includes/db.php");
 session_start();
 
 if (!isset($_SESSION['admin'])) {

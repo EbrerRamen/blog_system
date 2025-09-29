@@ -1,6 +1,6 @@
 <?php
-include("../includes/db.php")
-session_start()
+include("../includes/db.php");
+session_start();
 
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
@@ -16,8 +16,8 @@ $id = (int) $_GET['id'];
 
 //Fetch the existing post
 $result = $conn->query("SELECT * FROM posts WHERE id = $id");
-if ($result->numrows === 0) {
-    die("Post not found.")
+if ($result->num_rows === 0) {
+    die("Post not found.");
 }
 
 $post = $result->fetch_assoc();
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $conn->real_escape_string($_POST['title']);
     $content = $conn->real_escape_string($_POST['content']);
 
-    $sql = "UDPATE posts SET title='$title', content='$content', WHERE id=$id";
+    $sql = "UPDATE posts SET title='$title', content='$content' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: dashboard.php");
