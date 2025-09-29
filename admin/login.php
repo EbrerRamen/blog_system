@@ -3,7 +3,7 @@ session_start();
 include("../includes/db.php");
 
 //Handle login form
-if ($_server['REQUEST_METHOD'] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = $conn->real_escape_string($_POST['username']);
     $password = md5($_POST['password']); //match stored MD5
 
@@ -12,7 +12,7 @@ if ($_server['REQUEST_METHOD'] == "POST") {
 
     if ($result->num_rows == 1) {
         $_SESSION['admin'] = $username; //store login session
-        header("Location: dasboard.php");
+        header("Location: dashboard.php");
         exit;
     } else {
         $error = "Invalid username or password!";
@@ -28,7 +28,7 @@ if ($_server['REQUEST_METHOD'] == "POST") {
 <body>
     <h2>Admin Login</h2>
     <?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form nethod="POST" action="">
+    <form method="POST" action="">
         <label>Username:</label><br>
         <input type="text" name="username" required><br><br>
 
