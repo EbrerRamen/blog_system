@@ -37,8 +37,8 @@ if (!isset($_SESSION['admin'])) {
             echo "<td>".$row['title']."</td>";
             echo "<td>".$row['created_at']."</td>";
             echo "<td>";
-            echo "<a href='edit.php?id=" . $row['id'] . "'>Edit</a> | ";
-            echo "<a href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Are you sure?\")'>Delete</a>";
+            echo "<a href='edit.php?id=" . $row['id'] . "'><button class='action-btn edit-btn'>Edit</button></a>";
+            echo "<a href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Are you sure?\")'><button class='action-btn delete-btn'>Delete</button></a>";
             echo "</td>";
             echo "</tr>";
         }
