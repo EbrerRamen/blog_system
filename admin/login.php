@@ -24,8 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html>
     <head>
         <title>Admin Login</title>
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 <body>
+    <div class="login-container">
     <h2>Admin Login</h2>
     <?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
     <form method="POST" action="">
@@ -37,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         <button type="submit">Login</button>
     </form>
+</div>
 </body>
 </html>
 
