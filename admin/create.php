@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../incldues/db.php");
+include("../includes/db.php");
 
 // Check if admin is logged in
 if (!isset($_SESSION['admin'])) {
