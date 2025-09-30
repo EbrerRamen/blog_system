@@ -169,7 +169,7 @@ form label {
 .blog-container {
     max-width: 800px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .blog-title {
@@ -181,6 +181,9 @@ form label {
 
 .post-card {
     background: #fff;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 20px;
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 10px;
@@ -217,6 +220,36 @@ form label {
 .post-meta {
     font-size: 14px;
     color: #777;
+}
+
+header {
+    background-color: #3849ab;
+    padding: 15px 0;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+header .navbar a:hover {
+    color: #ffeb3b;
+}
+
+footer {
+    background-color: #3949ab;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
 }
 
 @media (max-width: 600px) {
