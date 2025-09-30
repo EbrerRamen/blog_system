@@ -42,14 +42,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
     <head>
         <title>Edit Post</title>
+        <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
+<body class="dashboard">
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="logout.php">Logout</a>
+</div>
+<div class="main-content">
+    <div class="form-container">
     <h2>Edit Post</h2>
+    <?php if(isset($error)) echo "<p class='error'>$error</p>"; ?>
+
     <form method="post">
-        <input type="text" name="title" value="<?php echo htmlspecialchars($post['title']); ?>" required><br><br>
-        <textarea name="content" rows="10" cols="50" required><?php echo htmlspecialchars($post['content']); ?></textarea><br><br>
-        <button type="submit">Update</button>
+        <label>Title</label>
+        <input type="text" name="title" value="<?php echo $post['title']; ?>" required>
+
+        <label>Content</label>
+        <textarea name="content" rows="6" required><?php echo $post['content']; ?></textarea>
+
+        <button type="submit" class="edit-btn">Update Post</button>
 </form>
-<a href="dashboard.php">Back to Dashboard</a>
+</div>
+</div>
 </body>
 </html>
