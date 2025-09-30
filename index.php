@@ -1,8 +1,12 @@
 <?php include("includes/db.php"); ?>
 <?php include("includes/header.php"); ?>
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
 <body class="blog-page">
     <div class="blog-container">
         <h1 class="blog-title">My Blog</h1>
+        
 
 <?php
 $result = $conn->query("SELECT * FROM posts ORDER BY created_at DESC");
