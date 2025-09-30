@@ -53,14 +53,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="main-content">
     <div class="form-container">
     <h2>Edit Post</h2>
-    <?php if(isset($error)) echo "<p class='error'>$error</p>"; ?>
+    <?php if(isset($error)) echo "<p class='error'>" . htmlspecialchars($error) . "</p>"; ?>
 
     <form method="post">
         <label>Title</label>
-        <input type="text" name="title" value="<?php echo $post['title']; ?>" required>
+        <input type="text" name="title" value="<?php echo htmlspecialchars($post['title']); ?>" required>
 
         <label>Content</label>
-        <textarea name="content" rows="6" required><?php echo $post['content']; ?></textarea>
+        <textarea name="content" rows="6" required><?php echo htmlspecialchars($post['content']); ?></textarea>
 
         <button type="submit" class="edit-btn">Update Post</button>
 </form>
