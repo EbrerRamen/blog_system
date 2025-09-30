@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<DOCTYPE html>
+<!DOCTYPE html>
     <html>
         <head>
             <title>Create New Post</title>
@@ -32,18 +32,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body class="dashboard">
     <div class="sidebar">
         <h2>Admin Panel</h2>
-        <a href="dashborad.php">Dashboard</a>
+        <a href="dashboard.php">Dashboard</a>
         <a href="logout.php">Logout</a>
 </div>
 <div class="main-content">
     <div class="form-container">
     <h2>Create New Post</h2>
 
-    <?php if(isset($error)) echo "<p style='colro:red; '>$error</p>"; ?>
+    <?php if(isset($error)) echo "<p  class='error'>" . htmlspecialchars($error) . "</p>"; ?>
 
     <form method="POST" action="">
         <label>Title:</label><br>
-        <input type="text" name="title" required><br><br>
+        <input type="text" name="title" required>
 
         <label>Content:</label><br>
         <textarea name="content" rows="6" required></textarea>

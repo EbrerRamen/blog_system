@@ -1,16 +1,20 @@
-/* General page styles */
-body.login-page {
+/* General Styles */
+body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Login Page Layout */
+body.login-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* container for the login form */
+/* Login Container */
 .login-container {
     background-color: #fff;
     padding: 40px 30px;
@@ -20,49 +24,64 @@ body.login-page {
     text-align: center;
 }
 
-/* headings */
 h2 {
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Input fields */
-input[type="text"], input[type="password"] {
-    width: 90%;
+/* Inputs */
+input[type="text"], 
+input[type="password"],
+form input[type="text"],
+form textarea {
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 14px;
 }
 
-/* Button */
+/* Buttons (shared) */
 button {
-    width: 95%;
+    width: 100%;
     padding: 10px;
-    background-color: #5c6bc0;
-    color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    color: white;
 }
 
-button:hover {
-    background-color: #3949ab;
+button:hover { opacity: 0.9; }
+
+/* Button Variants */
+button.create-btn { background-color: #66bb6a; }
+button.create-btn:hover { background-color: #2e7d32; }
+
+button.edit-btn { background-color: #29b6f6; }
+button.edit-btn:hover { background-color: #0288d1; }
+
+button.delete-btn { background-color: #ef5350; }
+button.delete-btn:hover { background-color: #c62828; }
+
+button.action-btn {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-right: 5px;
 }
 
-/* Error message */
-p.error {
+/* Error Messages */
+.error {
     color: red;
     font-size: 14px;
+    margin-bottom: 15px;
 }
 
 /* Dashboard Layout */
 body.dashboard {
-    display: block; /* remvoe flex */
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
+    display: block;
 }
 
 /* Sidebar */
@@ -71,7 +90,7 @@ body.dashboard {
     background-color: #3949ab;
     color: white;
     height: 100vh;
-    position: fixed; /* keeps sidebar fixed */
+    position: fixed;
     top: 0;
     bottom: 0;
     padding-top: 20px;
@@ -96,13 +115,13 @@ body.dashboard {
     background-color: #5c6bc0;
 }
 
-/* Main content */
+/* Main Content */
 .main-content {
-    margin-left: 240px; /*space for sidebar */
+    margin-left: 240px;
     padding: 20px;
 }
 
-/* Table of posts */
+/* Table of Posts */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -123,29 +142,7 @@ table th {
     color: white;
 }
 
-button.action-btn {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    font-size: 14px;
-    margin-right: 5px;
-}
-
-button.edit-btn {background-color: #29b6f6; }
-button.edit-btn:hover {background-color: #0288d1; }
-
-button.delete-btn {background-color: #ef5350; }
-button.delete-btn:hover { background-color: #c62828; }
-
-button.create-btn {
-    background-color: #66bb6a;
-    margin-bottom: 15px;
-}
-button.create-btn:hover { background-color: #2e7d32; }
-
-/* Form Container */
+/* Form Container (Create/Edit) */
 .form-container {
     background: #fff;
     padding: 25px;
@@ -160,38 +157,9 @@ button.create-btn:hover { background-color: #2e7d32; }
     color: #3949ab;
 }
 
-/* Labels */
 form label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
     color: #333;
-}
-
-/* Inputs */
-form input[type="text"],
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.error {
-    color: red;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-/* Buttons */
-button.create-btn,
-button.edit-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
 }
