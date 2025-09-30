@@ -27,11 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <html>
         <head>
             <title>Create New Post</title>
+            <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
+<body class="dashboard">
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <a href="dashborad.php">Dashboard</a>
+        <a href="logout.php">Logout</a>
+</div>
+<div class="main-content">
+    <div class="form-container">
     <h2>Create New Post</h2>
-    <a href="dashboard.php">Back to Dashboard</a>
-    <hr>
 
     <?php if(isset($error)) echo "<p style='colro:red; '>$error</p>"; ?>
 
@@ -40,10 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="title" required><br><br>
 
         <label>Content:</label><br>
-        <textarea name="content" rows="10" cols="50" required></textarea><br><br>
+        <textarea name="content" rows="6" required></textarea>
 
-        <button type="submit">Create Post</button>
+        <button type="submit" class="create-btn">Create Post</button>
 </form>
+</div>
+</div>
 </body>
 </html>
 
