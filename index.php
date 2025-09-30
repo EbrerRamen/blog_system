@@ -1,15 +1,20 @@
 <?php include("includes/db.php"); ?>
 <?php include("includes/header.php"); ?>
-
-<h1>My Blog</h1>
+<body class="blog-page">
+    <div class="blog-container">
+        <h1 class="blog-title">My Blog</h1>
 
 <?php
 $result = $conn->query("SELECT * FROM posts ORDER BY created_at DESC");
 while($row = $result->fetch_assoc()) {
-    echo "<h2><a href='post.php?id=" . $row['id'] . "'>" . $row['title'] . "</a><h2>";
-    echo "<p>" . substr($row['content'], 0, 200) . "...</p>";
-    echo "<small>Posted on " . $row['created_at'] . "</small><hr>";
+    echo "<div class='post-card'>";
+    echo "<h2 class='post-title'><a href='post.php?id=" . $row['id'] . "'>" . htmlspecialchars($row['title']) . "</a><h2>";
+    echo "<p class='post-excerpt'>" . htmlspecialchars(substr($row['content'], 0, 200)) . "...</p>";
+    echo "<small class='post-meta'>Posted on " . $row['created_at'] . "</small>";
+    echo "</div>";
 }
 ?>
+</div>
+</body>
 
 <?php include("includes/footer.php"); ?>
