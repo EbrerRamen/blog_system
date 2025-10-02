@@ -238,6 +238,11 @@ footer {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Make only the login page form narrower */
+body.login-page .form-container {
+    max-width: 420px;
+}
+
 .form-container h2,
 .login-container h2 {
     margin-bottom: 20px;
