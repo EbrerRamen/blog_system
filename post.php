@@ -11,9 +11,17 @@ if (isset($_GET['id'])) {
 
     if ($result->num_rows > 0) {
         $post = $result->fetch_assoc();
-        echo "<h1>" . $post["title"] . "</h1>";
-        echo "<p>" . nl2br($post['content']) . "</p>";
-        echo "<small>Posted on " . $post['created_at'] . "</small>";
+        ?>
+        <div class="blog-container">
+            <article class="post-card">
+                <h1 class="post-title"><?php echo htmlspecialchars($post['title']); ?></h1>
+                <p class="post-meta">Posted on <?php echo htmlspecialchars($post['created_at']); ?></p>
+                <div class="post-content">
+                    <?php echo nl2br(htmlspecialchars($post['content'])); ?>
+                </div>
+            </article>
+        </div>
+        <?php
     } else {
         echo "<p>Post not found!</p>";
     }
