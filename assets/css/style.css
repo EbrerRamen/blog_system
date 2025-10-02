@@ -161,6 +161,8 @@ table th {
     margin: 0;
     font-size: 24px;
     color: #333;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .post-title a {
@@ -177,6 +179,8 @@ table th {
     margin: 15px 0;
     color: #555;
     line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .post-meta {
@@ -188,6 +192,8 @@ table th {
     margin-top: 12px;
     color: #333;
     line-height: 1.8;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 header {
