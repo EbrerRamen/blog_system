@@ -42,13 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php if(isset($error)) echo "<p  class='error'>" . htmlspecialchars($error) . "</p>"; ?>
 
     <form method="POST" action="">
-        <label>Title:</label><br>
+        <label>Title:</label>
         <input type="text" name="title" required>
 
-        <label>Content:</label><br>
+        <label>Content:</label>
         <textarea name="content" rows="6" required></textarea>
 
-        <button type="submit" class="create-btn">Create Post</button>
+        <button type="submit" class="edit-btn">Create Post</button>
 </form>
 </div>
 </div>

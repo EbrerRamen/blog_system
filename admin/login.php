@@ -24,20 +24,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html>
     <head>
         <title>Admin Login</title>
-        <link rel="stylesheet" href="../assets/css/style.css?v=1">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 <body class="login-page">
-    <div class="login-container">
+    <div class="form-container">
     <h2>Admin Login</h2>
-    <?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+    <?php if(isset($error)) echo "<p class='error'>" . htmlspecialchars($error) . "</p>"; ?>
     <form method="POST" action="">
-        <label>Username:</label><br>
-        <input type="text" name="username" required><br><br>
+        <label>Username:</label>
+        <input type="text" name="username" required>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+        <label>Password:</label>
+        <input type="password" name="password" required>
 
-        <button type="submit">Login</button>
+        <button type="submit" class="edit-btn">Login</button>
     </form>
 </div>
 </body>
