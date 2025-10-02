@@ -184,6 +184,12 @@ table th {
     color: #777;
 }
 
+.post-content {
+    margin-top: 12px;
+    color: #333;
+    line-height: 1.8;
+}
+
 header {
     background-color: #3849ab;
     padding: 15px 0;
