@@ -241,6 +241,51 @@ footer {
 /* Make only the login page form narrower */
 body.login-page .form-container {
     max-width: 420px;
+    padding: 48px 36px;
+    border: 1px solid #e9e9f3;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Login form heading tweaks */
+body.login-page .form-container h2 {
+    font-size: 26px;
+    letter-spacing: 0.3px;
+    margin-bottom: 24px;
+}
+
+/* Inputs: softer background and focus ring for login only */
+body.login-page .form-container input[type="text"],
+body.login-page .form-container input[type="password"] {
+    background: #fbfcff;
+    border-color: #c7cbe6;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+body.login-page .form-container input[type="text"]:focus,
+body.login-page .form-container input[type="password"]:focus {
+    border-color: #3949ab;
+    box-shadow: 0 0 0 3px rgba(57,73,171,0.15);
+    background: #ffffff;
+}
+
+/* Button: gradient, shadow, and hover lift for login only */
+body.login-page .form-container button[type="submit"] {
+    background: linear-gradient(180deg, #3f51b5 0%, #303f9f 100%);
+    border: none;
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(48,63,159,0.28);
+    transition: transform 0.12s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+body.login-page .form-container button[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(48,63,159,0.32);
+}
+
+body.login-page .form-container button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(48,63,159,0.28);
 }
 
 .form-container h2,
